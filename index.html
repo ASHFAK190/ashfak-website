@@ -2,341 +2,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d1c">
-  <title>ASHFAK | Personal Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashfak | Personal Portfolio</title>
+<meta name="description" content="Ashfak's personal portfolio website">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #080d1c;
-      color: #ffffff;
-      line-height: 1.7;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(8,13,28,0.95);
-      border-bottom: 1px solid #202b45;
-      padding: 16px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #60a5fa;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #60a5fa;
-    }
-
-    section {
-      padding: 85px 8%;
-      scroll-margin-top: 65px;
-    }
-
-    .home {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background:
-        radial-gradient(circle at top, #172b55, #080d1c 65%);
-    }
-
-    .welcome {
-      color: #60a5fa;
-      font-size: 17px;
-      letter-spacing: 4px;
-      margin-bottom: 10px;
-    }
-
-    .home h1 {
-      font-size: clamp(55px, 12vw, 90px);
-      letter-spacing: 5px;
-      color: #ffffff;
-      text-shadow: 0 0 30px #2563eb;
-      animation: glow 3s infinite alternate;
-    }
-
-    .home h2 {
-      color: #60a5fa;
-      font-size: 23px;
-      margin: 12px 0;
-    }
-
-    .home p {
-      max-width: 550px;
-      color: #cbd5e1;
-      margin: 15px 0 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      margin: 6px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-      transform: translateY(-4px);
-    }
-
-    .outline {
-      background: transparent;
-      border: 1px solid #60a5fa;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 35px;
-      color: #60a5fa;
-    }
-
-    .about-box {
-      max-width: 750px;
-      margin: auto;
-      text-align: center;
-      color: #cbd5e1;
-      background: #111a30;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid #263858;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .card {
-      background: #111a30;
-      border: 1px solid #263858;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #60a5fa;
-    }
-
-    .card h3 {
-      color: #60a5fa;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      color: #cbd5e1;
-      margin: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #94a3b8;
-      border-top: 1px solid #263858;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.8s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #2563eb; }
-      to { text-shadow: 0 0 35px #60a5fa; }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      section {
-        padding: 65px 6%;
-      }
-
-      .home {
-        min-height: 80vh;
-      }
-
-      .home h2 {
-        font-size: 19px;
-      }
-    }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080d1b;color:#fff;line-height:1.7}
+:root{--blue:#70adff;--card:#121e36;--border:#263a5b;--muted:#b5c2d8}
+header{background:#080d1bf5;padding:15px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border)}
+.logo{font-size:24px;font-weight:bold;color:var(--blue);letter-spacing:2px}
+nav{display:flex;gap:18px}
+nav a{color:white;text-decoration:none;font-size:13px}
+nav a:hover{color:var(--blue)}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:50px 20px;background:radial-gradient(ellipse at top,#193969,transparent 70%)}
+.hero-content{max-width:750px}
+.tag{color:var(--blue);letter-spacing:5px;font-size:13px}
+.hero h1{font-size:clamp(48px,10vw,85px);margin:15px 0;text-shadow:0 0 20px #367edb}
+.hero h2{color:#80b4ff;font-size:clamp(17px,4vw,24px);margin-bottom:20px}
+.hero p{color:var(--muted);margin-bottom:25px}
+.btn{display:inline-block;padding:11px 24px;margin:5px;border-radius:30px;background:#347ff0;color:white;text-decoration:none;transition:.3s}
+.btn:hover{transform:translateY(-3px);background:#2464c4}
+.outline{background:transparent;border:1px solid var(--blue);color:#9cc5ff}
+section{padding:75px 7%;text-align:center;scroll-margin-top:75px}
+.heading{font-size:32px;color:#80b4ff;margin-bottom:10px}
+.subtitle{color:var(--muted);margin-bottom:35px}
+.about{max-width:850px;margin:auto;background:var(--card);border:1px solid var(--border);padding:30px;border-radius:18px;text-align:left}
+.about h3{color:var(--blue);font-size:22px;margin-bottom:12px}
+.about p{color:var(--muted)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:850px;margin:25px auto}
+.info{background:var(--card);padding:18px;border:1px solid var(--border);border-radius:14px}
+.info strong{color:var(--blue);display:block}
+.info span{font-size:13px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1050px;margin:auto;align-items:start}
+.skill{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:25px 18px;cursor:pointer;transition:.3s;text-align:center}
+.skill:hover,.skill.active{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 0 18px #347ff022}
+.skill-icon{font-size:40px;margin-bottom:10px}
+.skill h3{color:#85b8ff;font-size:19px}
+.skill p{color:var(--muted);font-size:13px}
+.view{display:block;color:var(--blue);font-size:13px;margin-top:12px}
+.details{display:none;text-align:left;border-top:1px solid var(--border);margin-top:17px;padding-top:12px}
+.skill.active .details{display:block}
+.details ul{list-style:none}
+.details li{padding:5px 0;color:#d3dff1;font-size:14px}
+.details li:before{content:"✓ ";color:var(--blue);font-weight:bold}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:850px;margin:auto}
+.project{background:var(--card);border:1px solid var(--border);padding:27px;border-radius:16px}
+.project h3{color:var(--blue);margin-bottom:10px}
+.project p{color:var(--muted)}
+.contact-card{max-width:750px;margin:auto;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px}
+.contact-card h3{color:var(--blue);font-size:23px;margin-bottom:12px}
+.contact-card p{color:var(--muted);margin:10px 0;overflow-wrap:anywhere}
+.contact-card a{color:#8cbaff}
+.social{display:inline-block;margin:12px 5px;padding:11px 22px;border:1px solid var(--blue);border-radius:30px;color:#9cc5ff!important;text-decoration:none}
+.social:hover{background:#347ff0;color:white!important}
+footer{text-align:center;padding:24px 10px;border-top:1px solid var(--border);color:#9aaac4;font-size:13px}
+@media(max-width:700px){
+header{padding:13px 4%;flex-wrap:wrap;gap:10px}
+.logo{font-size:20px}
+nav{gap:10px;flex-wrap:wrap}
+nav a{font-size:11px}
+section{padding:60px 5%}
+.skills{grid-template-columns:1fr}
+.project-grid{grid-template-columns:1fr}
+.info-grid{grid-template-columns:1fr}
+.hero{min-height:80vh}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">ASHFAK.</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+<div class="logo">ASHFAK.</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <section class="home" id="home">
-    <div class="welcome">HELLO, I'M</div>
-    <h1>ASHFAK</h1>
-    <h2>Student | Future Web Developer</h2>
-    <p>
-      Welcome to my personal portfolio.
-      I'm learning, growing and building my future.
-      Dream Big, Work Hard and Never Give Up!
-    </p>
-    <div>
-      <a href="#about" class="btn">About Me</a>
-      <a href="#contact" class="btn outline">Contact Me</a>
-    </div>
-  </section>
+<!-- HOME SECTION -->
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="tag">WELCOME TO MY WORLD</div>
+<h1>ASHFAK</h1>
+<h2>Civil Engineering Student | Future Developer</h2>
+<p>
+Hello! Welcome to my personal portfolio.
+I am interested in Civil Engineering, technology,
+AutoCAD and Python programming. I believe in
+learning something new every day.
+</p>
+<a href="#about" class="btn">About Me</a>
+<a href="#contact" class="btn outline">Contact Me</a>
+</div>
+</section>
 
-  <section id="about" class="reveal">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-box">
-      <h3>Hello, I'm Ashfak 👋</h3>
-      <p>
-        I am a student and an aspiring web developer.
-        I love learning new things and exploring technology.
-        My goal is to improve my skills and create amazing
-        websites in the future.
-      </p>
-    </div>
-  </section>
+<!-- ABOUT SECTION -->
+<section id="about">
+<h2 class="heading">About Me</h2>
+<p class="subtitle">Know more about me</p>
 
-  <section id="skills" class="reveal">
-    <h2 class="section-title">My Skills</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>HTML</h3>
-        <p>Learning how to build website structures.</p>
-      </div>
-      <div class="card">
-        <h3>CSS</h3>
-        <p>Learning website design and styling.</p>
-      </div>
-      <div class="card">
-        <h3>Learning</h3>
-        <p>Always ready to learn something new.</p>
-      </div>
-    </div>
-  </section>
+<div class="about">
+<h3>Hello, I'm Ashfak 👋</h3>
+<p>
+I am a Civil Engineering student interested in
+construction, engineering design and technology.
+I am learning AutoCAD and Python programming
+to improve my technical knowledge and skills.
+My goal is to keep learning, gain experience
+and build a successful future.
+</p>
+</div>
 
-  <section id="projects" class="reveal">
-    <h2 class="section-title">My Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>My First Website</h3>
-        <p>My personal portfolio website built using HTML and CSS.</p>
-      </div>
-      <div class="card">
-        <h3>Coming Soon</h3>
-        <p>More exciting projects will be added here soon.</p>
-      </div>
-    </div>
-  </section>
+<div class="info-grid">
+<div class="info">
+<strong>Education</strong>
+<span>Civil Engineering</span>
+</div>
+<div class="info">
+<strong>Interests</strong>
+<span>Technology & Design</span>
+</div>
+<div class="info">
+<strong>Goal</strong>
+<span>Learn & Grow</span>
+</div>
+</div>
+</section>
 
-  <section id="contact" class="contact reveal">
-    <h2 class="section-title">Contact Me</h2>
-    <p>Thank you for visiting my portfolio!</p>
-    <p>Let's connect and learn together.</p>
-    <a href="https://github.com/ASHFAK190"
-       class="btn" target="_blank">
-       Visit My GitHub
-    </a>
-  </section>
+<!-- SKILLS SECTION -->
+<section id="skills">
+<h2 class="heading">My Skills</h2>
+<p class="subtitle">Click on a card to explore its topics</p>
 
-  <footer>
-    <p>© <span id="year"></span> ASHFAK | All Rights Reserved.</p>
-    <p>Dream • Learn • Grow ❤️</p>
-  </footer>
+<div class="skills">
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+<div class="skill" onclick="toggleSkill(this)">
+<div class="skill-icon">🏗️</div>
+<h3>Civil Engineering</h3>
+<p>Engineering & Construction</p>
+<span class="view">Click to view details +</span>
+<div class="details">
+<ul>
+<li>Engineering Drawing</li>
+<li>Building Materials</li>
+<li>Surveying</li>
+<li>Construction Technology</li>
+<li>Estimation & Costing</li>
+<li>Structural Engineering Basics</li>
+<li>Building Planning</li>
+</ul>
+</div>
+</div>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.1 });
+<div class="skill" onclick="toggleSkill(this)">
+<div class="skill-icon">📐</div>
+<h3>AutoCAD</h3>
+<p>Design & Drafting</p>
+<span class="view">Click to view details +</span>
+<div class="details">
+<ul>
+<li>2D Drafting</li>
+<li>Floor Plan Design</li>
+<li>Technical Drawing</li>
+<li>Layers & Dimensions</li>
+<li>Building Layouts</li>
+<li>Engineering Drawings</li>
+</ul>
+</div>
+</div>
 
-    document.querySelectorAll(".reveal").forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+<div class="skill" onclick="toggleSkill(this)">
+<div class="skill-icon">💻</div>
+<h3>Python Programming</h3>
+<p>Programming & Technology</p>
+<span class="view">Click to view details +</span>
+<div class="details">
+<ul>
+<li>Python Basics</li>
+<li>Variables & Data Types</li>
+<li>Conditional Statements</li>
+<li>Loops</li>
+<li>Functions</li>
+<li>Basic Problem Solving</li>
+</ul>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+<h2 class="heading">My Projects</h2>
+<p class="subtitle">Things I am working on</p>
+
+<div class="project-grid">
+<div class="project">
+<h3>🌐 Personal Portfolio</h3>
+<p>
+My personal website to showcase my interests,
+skills and projects using HTML and CSS.
+</p>
+</div>
+
+<div class="project">
+<h3>🚀 Future Projects</h3>
+<p>
+I am continuously learning and looking forward
+to creating more interesting projects.
+</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+<h2 class="heading">Contact Me</h2>
+<p class="subtitle">Let's connect with each other</p>
+
+<div class="contact-card">
+<h3>Get In Touch</h3>
+<p>Feel free to contact me through email or Instagram.</p>
+
+<p>
+📧 Email:
+<a href="mailto:mdashfakansari13@gmail.com">
+mdashfakansari13@gmail.com
+</a>
+</p>
+
+<p>
+📸 Instagram:
+<a href="https://www.instagram.com/md_ashfak._/"
+target="_blank" rel="noopener noreferrer">
+@md_ashfak._
+</a>
+</p>
+
+<a class="social"
+href="https://www.instagram.com/md_ashfak._/"
+target="_blank" rel="noopener noreferrer">
+Instagram Profile
+</a>
+
+<a class="social"
+href="mailto:mdashfakansari13@gmail.com">
+Send Email
+</a>
+</div>
+</section>
+
+<footer>
+<p>© <span id="year"></span> Ashfak. All Rights Reserved.</p>
+<p>Designed with ❤️ by Ashfak</p>
+</footer>
+
+<script>
+function toggleSkill(card){
+  card.classList.toggle("active");
+
+  const view = card.querySelector(".view");
+
+  if(card.classList.contains("active")){
+    view.textContent = "Click to hide details −";
+  }else{
+    view.textContent = "Click to view details +";
+  }
+}
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
 
 </body>
 </html>
-
